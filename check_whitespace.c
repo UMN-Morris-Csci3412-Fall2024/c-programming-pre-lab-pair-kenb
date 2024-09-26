@@ -59,7 +59,12 @@ int is_clean(char const *str) {
   // the first is less than the second (in alphabetical order),
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
-  int result = strcmp(str, cleaned);
+  int result = strcmp(str, cleaned) == 0;
 
-  return result == 0;
+  // If we allocated memory for cleaned, we need to free it.
+  if (cleaned != str && cleaned[0] != '\0') { // If cleaned is not the same as str and is not the empty string.
+    free((void*) cleaned); // We cast cleaned to void* because free takes a void*.
+  }
+
+  return result;
 }
