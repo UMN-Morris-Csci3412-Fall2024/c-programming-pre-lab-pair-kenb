@@ -1,5 +1,7 @@
 # Leak report
 
+By Ken Broden
+
 - The memory errors are happening because the memory allocated by the ['strip'] function is not being freed after use.
 - Each call to ['strip'] allocates memory using ['calloc'], but this memory is not released, leading to memory leaks
 
@@ -7,6 +9,8 @@
   
 - **Free the Memory in Tests:** Make sure the memory allocated by ['strip'] is freed after each test.
   - Modify the tests in ['check_whitespace_test.cpp'] to free the returned strings
+  - Modify is_clean function - is_clean calls the strip() function. De-allocate memory at the end of is_clean to make sure there is no memory leak
+  - Empty string does not need to be freed
 
 ```sh
 ==1077870== 
