@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
+        "allocs",
         "Borchardt",
         "calloc",
         "cmockery",
+        "libgtest",
         "malloc",
         "STREQ",
         "structs",
