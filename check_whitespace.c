@@ -63,7 +63,7 @@ int is_clean(char const *str) {
 
   // If we allocated memory for cleaned, we need to free it.
   if (cleaned != str && cleaned[0] != '\0') { // If cleaned is not the same as str and is not the empty string.
-    free((void*) cleaned); // We cast cleaned to void* because free takes a void*.
+    free((void*) cleaned); // cast cleaned to void* because free takes a void*.
   }
 
   return result;
